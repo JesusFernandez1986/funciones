@@ -82,21 +82,3 @@ def resultados():
             " The secret number was:", str(score_dict.get("secret number")),
             " Missed numbers: " + str(score_dict.get("wrong_guesses")))
 
-
-
-
-
-def resultados():
-        with open("score_list.txt", "r") as score_file:  # abrimos el archivo .txt para guardar en el la lista de resultados
-            score_list = json.loads(score_file.read())
-        sorted_list = sorted(score_list, key=lambda k: k["attempts"])[:3]  # creamos una nueva lista ordenada que solo contenga el resulado de los 3 mejores intentos
-        print("Top scores: ")
-        for score_dict in sorted_list:  # bucle que recorre la lista ordenada y muestra por pantalla los valores de cada una de las claves almacenadas
-            print(str(score_dict["attempts"]) + " Attempts, Date: " + str(score_dict.get("date")) + " Name:", str(score_dict.get("name")),
-            " The secret number was:", str(score_dict.get("secret number")),
-            " Missed numbers: " + str(score_dict.get("wrong_guesses")))
-
-
-
-
-
